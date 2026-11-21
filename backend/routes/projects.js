@@ -5,6 +5,8 @@ import path from 'node:path';
 import { createProject, getProject, saveProject, projectFolder } from '../storage.js';
 import { extractAudio, transcribe } from '../services/transcribe.js';
 import { romanize } from '../services/romanize.js';
+import { exportVideo } from '../services/exportVideo.js';
+import { styles } from '../services/styles.js';
 
 const router = express.Router();
 
@@ -58,5 +60,56 @@ async function runPipeline(id) {
   }
   saveProject(project);
 }
+
+router.put('/:id/captions', (req, res) => {
+  const project = getProject(req.params.id);
+  if (!project) return res.status(404).json({ error: 'Project not found' });
+  const { lines, styleName } = req.body ?? {};
+  if (Array.isArray(lines)) {
+    project.lines = lines.map(l => ({
+      start: Number(l.start),
+      end: Number(l.end),
+      original: String(l.original ?? ''),
+      text: String(l.text ?? '')
+    }));
+  }
+  if (styleName && styles[styleName]) project.styleName = styleName;
+  saveProject(project);
+  res.json(project);
+});
+
+router.post('/:id/export', (req, res) => {
+  const project = getProject(req.params.id);
+  if (!project) return res.status(404).json({ error: 'Project not found' });
+  if (project.status === 'exporting') return res.status(409).json({ error: 'Already exporting' });
+  if (!project.lines.length) return res.status(400).json({ error: 'No captions to export' });
+  const styleName = req.body?.styleName;
+  if (styleName && styles[styleName]) project.styleName = styleName;
+  project.status = 'exporting';
+  project.error = null;
+  saveProject(project);
+  res.status(202).json(project);
+  runExport(project.id);
+});
+
+async function runExport(id) {
+  const project = getProject(id);
+  try {
+    await exportVideo(projectFolder(id), project.lines, project.styleName);
+    project.status = 'done';
+  } catch (err) {
+    project.status = 'failed';
+    project.error = err.message;
+  }
+  saveProject(project);
+}
+
+router.get('/:id/download', (req, res) => {
+  const project = getProject(req.params.id);
+  if (!project) return res.status(404).json({ error: 'Project not found' });
+  const file = path.join(projectFolder(project.id), 'output.mp4');
+  if (!fs.existsSync(file)) return res.status(404).json({ error: 'Video not exported yet' });
+  res.download(file, 'captioned-video.mp4');
+});
 
 export default router;

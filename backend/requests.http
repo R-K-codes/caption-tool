@@ -1,0 +1,19 @@
+### Upload a video
+POST http://localhost:3000/api/projects
+Content-Type: multipart/form-data; boundary=----Boundary
+
+------Boundary
+Content-Disposition: form-data; name="language"
+
+ur
+------Boundary
+Content-Disposition: form-data; name="video"; filename="sample.mp4"
+Content-Type: video/mp4
+
+< ./sample.mp4
+------Boundary--
+### Start transcription
+POST http://localhost:3000/api/projects/30ba1857-37b7-4f55-812d-821ba7de97f4/transcribe
+
+### Check status
+GET http://localhost:3000/api/projects/30ba1857-37b7-4f55-812d-821ba7de97f4

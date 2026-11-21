@@ -1,0 +1,458 @@
+[
+  {
+    "name": "Anton",
+    "file": "anton.ttf",
+    "family": "Anton Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Bebas Neue",
+    "file": "bebas-neue.ttf",
+    "family": "Bebas Neue Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Oswald",
+    "file": "oswald.ttf",
+    "family": "Oswald Bold",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Staatliches",
+    "file": "staatliches.ttf",
+    "family": "Staatliches Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Teko",
+    "file": "teko.ttf",
+    "family": "Teko Bold",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "League Spartan",
+    "file": "league-spartan.ttf",
+    "family": "League Spartan Bold",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Archivo Black",
+    "file": "archivo-black.ttf",
+    "family": "Archivo Black Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Alfa Slab One",
+    "file": "alfa-slab-one.ttf",
+    "family": "Alfa Slab One Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Bowlby One",
+    "file": "bowlby-one.ttf",
+    "family": "Bowlby One Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Bevan",
+    "file": "bevan.ttf",
+    "family": "Bevan Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Russo One",
+    "file": "russo-one.ttf",
+    "family": "Russo One",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Luckiest Guy",
+    "file": "luckiest-guy.ttf",
+    "family": "Luckiest Guy Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Bangers",
+    "file": "bangers.ttf",
+    "family": "Bangers Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Black Ops One",
+    "file": "black-ops-one.ttf",
+    "family": "Black Ops One Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Sigmar One",
+    "file": "sigmar-one.ttf",
+    "family": "Sigmar One Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Chango",
+    "file": "chango.ttf",
+    "family": "Chango Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Rammetto One",
+    "file": "rammetto-one.ttf",
+    "family": "Rammetto One Regular",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Fugaz One",
+    "file": "fugaz-one.ttf",
+    "family": "Fugaz One",
+    "group": "Bold and impact"
+  },
+  {
+    "name": "Montserrat",
+    "file": "montserrat.ttf",
+    "family": "Montserrat Bold",
+    "group": "Clean"
+  },
+  {
+    "name": "Poppins",
+    "file": "poppins.ttf",
+    "family": "Poppins Bold",
+    "group": "Clean"
+  },
+  {
+    "name": "Inter",
+    "file": "inter.ttf",
+    "family": "Inter Bold",
+    "group": "Clean"
+  },
+  {
+    "name": "Raleway",
+    "file": "raleway.ttf",
+    "family": "Raleway Bold",
+    "group": "Clean"
+  },
+  {
+    "name": "Rubik",
+    "file": "rubik.ttf",
+    "family": "Rubik Bold",
+    "group": "Clean"
+  },
+  {
+    "name": "Quicksand",
+    "file": "quicksand.ttf",
+    "family": "Quicksand Bold",
+    "group": "Clean"
+  },
+  {
+    "name": "Comfortaa",
+    "file": "comfortaa.ttf",
+    "family": "Comfortaa Bold",
+    "group": "Clean"
+  },
+  {
+    "name": "Righteous",
+    "file": "righteous.ttf",
+    "family": "Righteous",
+    "group": "Clean"
+  },
+  {
+    "name": "Space Mono",
+    "file": "space-mono.ttf",
+    "family": "Space Mono Bold",
+    "group": "Clean"
+  },
+  {
+    "name": "Fredoka",
+    "file": "fredoka.ttf",
+    "family": "Fredoka Bold",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Baloo 2",
+    "file": "baloo-2.ttf",
+    "family": "Baloo 2 Bold",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Lilita One",
+    "file": "lilita-one.ttf",
+    "family": "Lilita One",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Titan One",
+    "file": "titan-one.ttf",
+    "family": "Titan One",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Chewy",
+    "file": "chewy.ttf",
+    "family": "Chewy Regular",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Boogaloo",
+    "file": "boogaloo.ttf",
+    "family": "Boogaloo Regular",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Concert One",
+    "file": "concert-one.ttf",
+    "family": "Concert One",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Paytone One",
+    "file": "paytone-one.ttf",
+    "family": "Paytone One Regular",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Spicy Rice",
+    "file": "spicy-rice.ttf",
+    "family": "Spicy Rice",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Lemon",
+    "file": "lemon.ttf",
+    "family": "Lemon Regular",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Shrikhand",
+    "file": "shrikhand.ttf",
+    "family": "Shrikhand Regular",
+    "group": "Rounded and fun"
+  },
+  {
+    "name": "Permanent Marker",
+    "file": "permanent-marker.ttf",
+    "family": "Permanent Marker Regular",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Caveat",
+    "file": "caveat.ttf",
+    "family": "Caveat Bold",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Shadows Into Light",
+    "file": "shadows-into-light.ttf",
+    "family": "Shadows Into Light",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Amatic SC",
+    "file": "amatic-sc.ttf",
+    "family": "Amatic SC Bold",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Indie Flower",
+    "file": "indie-flower.ttf",
+    "family": "Indie Flower",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Patrick Hand",
+    "file": "patrick-hand.ttf",
+    "family": "Patrick Hand",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Gloria Hallelujah",
+    "file": "gloria-hallelujah.ttf",
+    "family": "Gloria Hallelujah",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Gochi Hand",
+    "file": "gochi-hand.ttf",
+    "family": "Gochi Hand",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Rock Salt",
+    "file": "rock-salt.ttf",
+    "family": "Rock Salt Regular",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Rancho",
+    "file": "rancho.ttf",
+    "family": "Rancho Regular",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Knewave",
+    "file": "knewave.ttf",
+    "family": "Knewave",
+    "group": "Handwriting and marker"
+  },
+  {
+    "name": "Pacifico",
+    "file": "pacifico.ttf",
+    "family": "Pacifico Regular",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Lobster",
+    "file": "lobster.ttf",
+    "family": "Lobster Regular",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Dancing Script",
+    "file": "dancing-script.ttf",
+    "family": "Dancing Script Bold",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Great Vibes",
+    "file": "great-vibes.ttf",
+    "family": "Great Vibes Regular",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Satisfy",
+    "file": "satisfy.ttf",
+    "family": "Satisfy Regular",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Sacramento",
+    "file": "sacramento.ttf",
+    "family": "Sacramento",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Kaushan Script",
+    "file": "kaushan-script.ttf",
+    "family": "Kaushan Script",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Yellowtail",
+    "file": "yellowtail.ttf",
+    "family": "Yellowtail Regular",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Courgette",
+    "file": "courgette.ttf",
+    "family": "Courgette Regular",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Oleo Script",
+    "file": "oleo-script.ttf",
+    "family": "Oleo Script Bold",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Marck Script",
+    "file": "marck-script.ttf",
+    "family": "Marck Script",
+    "group": "Script and cursive"
+  },
+  {
+    "name": "Playfair Display",
+    "file": "playfair-display.ttf",
+    "family": "Playfair Display Bold",
+    "group": "Serif and elegant"
+  },
+  {
+    "name": "Lora",
+    "file": "lora.ttf",
+    "family": "Lora Bold",
+    "group": "Serif and elegant"
+  },
+  {
+    "name": "Abril Fatface",
+    "file": "abril-fatface.ttf",
+    "family": "Abril Fatface",
+    "group": "Serif and elegant"
+  },
+  {
+    "name": "Cinzel",
+    "file": "cinzel.ttf",
+    "family": "Cinzel Bold",
+    "group": "Serif and elegant"
+  },
+  {
+    "name": "Cormorant Garamond",
+    "file": "cormorant-garamond.ttf",
+    "family": "Cormorant Garamond Bold",
+    "group": "Serif and elegant"
+  },
+  {
+    "name": "DM Serif Display",
+    "file": "dm-serif-display.ttf",
+    "family": "DM Serif Display Regular",
+    "group": "Serif and elegant"
+  },
+  {
+    "name": "Bree Serif",
+    "file": "bree-serif.ttf",
+    "family": "Bree Serif Regular",
+    "group": "Serif and elegant"
+  },
+  {
+    "name": "Pirata One",
+    "file": "pirata-one.ttf",
+    "family": "Pirata One",
+    "group": "Serif and elegant"
+  },
+  {
+    "name": "Yatra One",
+    "file": "yatra-one.ttf",
+    "family": "Yatra One Regular",
+    "group": "Serif and elegant"
+  },
+  {
+    "name": "Orbitron",
+    "file": "orbitron.ttf",
+    "family": "Orbitron Bold",
+    "group": "Tech and retro"
+  },
+  {
+    "name": "Audiowide",
+    "file": "audiowide.ttf",
+    "family": "Audiowide Regular",
+    "group": "Tech and retro"
+  },
+  {
+    "name": "Press Start 2P",
+    "file": "press-start-2p.ttf",
+    "family": "Press Start 2P Regular",
+    "group": "Tech and retro"
+  },
+  {
+    "name": "Special Elite",
+    "file": "special-elite.ttf",
+    "family": "Special Elite Regular",
+    "group": "Tech and retro"
+  },
+  {
+    "name": "Creepster",
+    "file": "creepster.ttf",
+    "family": "Creepster",
+    "group": "Tech and retro"
+  },
+  {
+    "name": "Bungee",
+    "file": "bungee.ttf",
+    "family": "Bungee Regular",
+    "group": "Tech and retro"
+  },
+  {
+    "name": "Fascinate",
+    "file": "fascinate.ttf",
+    "family": "Fascinate",
+    "group": "Tech and retro"
+  }
+]

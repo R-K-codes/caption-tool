@@ -35,3 +35,16 @@ export function saveProject(project) {
   const file = path.join(projectFolder(project.id), 'project.json');
   fs.writeFileSync(file, JSON.stringify(project, null, 2), 'utf8');
 }
+
+
+export function recoverInterruptedProjects() {
+  if (!fs.existsSync(root)) return;
+  for (const name of fs.readdirSync(root)) {
+    const project = getProject(name);
+    if (project && (project.status === 'processing' || project.status === 'exporting')) {
+      project.status = project.lines.length ? 'ready' : 'failed';
+      project.error = 'The server restarted while this was running. Please try again.';
+      saveProject(project);
+    }
+  }
+}

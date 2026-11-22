@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { saveCaptions, startExport, getProject, getFonts, fontFileUrl, downloadUrl, videoUrl } from '../api.js';
 import { STYLES, DEFAULT_SETTINGS, previewFor, captionBoxStyle } from '../captionLogic.js';
+import FontSelect from './FontSelect.jsx';
 
 const clamp = (n, lo, hi) => Math.min(hi, Math.max(lo, n));
 
@@ -53,16 +54,6 @@ export default function EditorPage({ project, onBack }) {
   const active = lines.findIndex((l) => time >= l.start && time < l.end);
   const preview = previewFor(lines, time, settings.styleName);
   const shown = preview || (paused ? { words: ['Drag me anywhere'], active: -1, sample: true } : null);
-
-  const groups = [];
-  for (const f of fonts) {
-    let g = groups.find((x) => x[0] === f.group);
-    if (!g) {
-      g = [f.group, []];
-      groups.push(g);
-    }
-    g[1].push(f);
-  }
 
   function change(patch) {
     setSettings((prev) => ({ ...prev, ...patch }));
@@ -143,6 +134,10 @@ export default function EditorPage({ project, onBack }) {
               ))}
             </select>
           </label>
+          <label className="inline">
+            Font:{' '}
+            <FontSelect fonts={fonts} value={settings.font} onChange={(name) => change({ font: name })} />
+          </label>
           <label>
             Size: {Math.round(settings.sizeScale * 100)}%{' '}
             <input
@@ -181,80 +176,41 @@ export default function EditorPage({ project, onBack }) {
       </div>
 
       <div className="editor" style={{ marginTop: 16 }}>
-        <div>
-          <div className="player" ref={playerRef} style={{ containerType: 'inline-size' }}>
-            <video
-              ref={videoRef}
-              src={videoUrl(project.id)}
-              controls
-              style={{ maxHeight: 'none' }}
-              onTimeUpdate={(e) => setTime(e.currentTarget.currentTime)}
-              onPlay={() => setPaused(false)}
-              onPause={() => setPaused(true)}
-              onLoadedMetadata={(e) =>
-                setDims({ w: e.currentTarget.videoWidth, h: e.currentTarget.videoHeight })
-              }
-            />
-            {shown && (
-              <div
-                style={{
-                  ...captionBoxStyle(settings.styleName, fontObj, settings.sizeScale, settings.posX, settings.posY, dims),
-                  cursor: 'grab',
-                  touchAction: 'none',
-                  userSelect: 'none',
-                  pointerEvents: 'auto',
-                  opacity: shown.sample ? 0.6 : 1
-                }}
-                onPointerDown={(e) => {
-                  dragging.current = true;
-                  e.currentTarget.setPointerCapture(e.pointerId);
-                }}
-                onPointerMove={moveCaption}
-                onPointerUp={() => { dragging.current = false; }}
-                onPointerCancel={() => { dragging.current = false; }}
-              >
-                {shown.words.map((w, i) => (
-                  <span
-                    key={i}
-                    style={i === shown.active && style.highlight ? { color: style.highlight } : undefined}
-                  >
-                    {i > 0 ? ' ' : ''}{w}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="card">
-            <h2>Font</h2>
-            <p className="muted">Current: {settings.font}</p>
-            <div style={{ maxHeight: 320, overflowY: 'auto' }}>
-              {groups.map(([group, items]) => (
-                <div key={group}>
-                  <div className="muted" style={{ fontSize: 12, margin: '10px 0 4px' }}>{group}</div>
-                  {items.map((f) => (
-                    <button
-                      key={f.name}
-                      onClick={() => change({ font: f.name })}
-                      style={{
-                        display: 'block',
-                        width: '100%',
-                        textAlign: 'left',
-                        marginBottom: 4,
-                        fontSize: 20,
-                        fontWeight: 400,
-                        fontFamily: `'${f.name}', Arial, sans-serif`,
-                        background: settings.font === f.name ? '#4f46e5' : '#f3f4f6',
-                        color: settings.font === f.name ? '#ffffff' : '#1c1c1e'
-                      }}
-                    >
-                      {f.name}
-                    </button>
-                  ))}
-                </div>
+        <div className="player" ref={playerRef} style={{ containerType: 'inline-size' }}>
+          <video
+            ref={videoRef}
+            src={videoUrl(project.id)}
+            controls
+            style={{ maxHeight: 'none' }}
+            onTimeUpdate={(e) => setTime(e.currentTarget.currentTime)}
+            onPlay={() => setPaused(false)}
+            onPause={() => setPaused(true)}
+            onLoadedMetadata={(e) =>
+              setDims({ w: e.currentTarget.videoWidth, h: e.currentTarget.videoHeight })
+            }
+          />
+          {shown && (
+            <div
+              style={{
+                ...captionBoxStyle(settings.styleName, fontObj, settings.sizeScale, settings.posX, settings.posY, dims),
+                cursor: 'grab',
+                touchAction: 'none',
+                userSelect: 'none',
+                pointerEvents: 'auto',
+                opacity: shown.sample ? 0.6 : 1
+              }}
+              onPointerDown={(e) => { dragging.current = true; e.currentTarget.setPointerCapture(e.pointerId); }}
+              onPointerMove={moveCaption}
+              onPointerUp={() => { dragging.current = false; }}
+              onPointerCancel={() => { dragging.current = false; }}
+            >
+              {shown.words.map((w, i) => (
+                <span key={i} style={i === shown.active && style.highlight ? { color: style.highlight } : undefined}>
+                  {i > 0 ? ' ' : ''}{w}
+                </span>
               ))}
             </div>
-          </div>
+          )}
         </div>
 
         <div className="card lines" style={{ marginTop: 0 }}>
@@ -265,27 +221,13 @@ export default function EditorPage({ project, onBack }) {
           </div>
           {lines.map((l, i) => (
             <div key={i} className={'line' + (i === active ? ' active' : '')}>
-              <input
-                type="number"
-                step="0.1"
-                min="0"
-                defaultValue={Number(l.start).toFixed(2)}
-                onBlur={(e) => commitTime(i, 'start', e.target.value)}
-              />
-              <input
-                type="number"
-                step="0.1"
-                min="0"
-                defaultValue={Number(l.end).toFixed(2)}
-                onBlur={(e) => commitTime(i, 'end', e.target.value)}
-              />
-              <input
-                type="text"
-                value={l.text}
-                title={l.original}
+              <input type="number" step="0.1" min="0" defaultValue={Number(l.start).toFixed(2)}
+                onBlur={(e) => commitTime(i, 'start', e.target.value)} />
+              <input type="number" step="0.1" min="0" defaultValue={Number(l.end).toFixed(2)}
+                onBlur={(e) => commitTime(i, 'end', e.target.value)} />
+              <input type="text" value={l.text} title={l.original}
                 onChange={(e) => updateLine(i, 'text', e.target.value)}
-                onFocus={() => seek(l.start)}
-              />
+                onFocus={() => seek(l.start)} />
             </div>
           ))}
         </div>

@@ -11,10 +11,10 @@ function idFromHash() {
 const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
 const FEATURES = [
-  { tone: 'green', title: 'Word highlight', text: 'Bolte hue har word alag colour mein chamakta hai.' },
-  { tone: 'amber', title: 'Font library', text: 'Bold, impact aur Urdu-friendly fonts ek dropdown mein.' },
-  { tone: 'peach', title: 'Drag to place', text: 'Caption ko video par kahin bhi khench kar rakho.' },
-  { tone: 'cream', title: 'Timing editor', text: 'Har line ka start aur end second tak theek karo.' }
+  { tone: 'green', title: 'Word highlight', text: 'Each word lights up in a new color as it is spoken.' },
+  { tone: 'amber', title: 'Font library', text: 'Bold, impact and Urdu-friendly fonts in one dropdown.' },
+  { tone: 'peach', title: 'Drag to place', text: 'Drag the caption anywhere on the video.' },
+  { tone: 'cream', title: 'Timing editor', text: 'Fine-tune the start and end of every line to the second.' }
 ];
 
 export default function App() {
